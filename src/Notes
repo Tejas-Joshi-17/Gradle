@@ -1,0 +1,90 @@
+--------------------------------------------------------------------------------------------------------------------------
+
+Gradle :- Build Automation Tool
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Building an Application contains many processes. These processes are known as build process.
+This processes involves :-
+    1) Developing Source Code of the application
+    2) Compiling the code/app/project
+
+    3) Adding libraries/jar files to the classpath
+    4) Creating project standard directories/folders
+    5) Generating documentations (use javadoc tool)
+    6) Building jar/war files
+    7) Unit Testing
+    8) Deployment
+
+Instead of doing these all build process manually, It is better to automate them
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Features of Gradle :-
+
+    1) Gradle allows us to write scripts in groovy/kotlin and use it in different jvm based language(java/kotlin/groovy & etc)
+    2) Gradle uses incremental build process.
+    3) Gradle is bit faster than maven.
+    4) Gradle gives caching concepts.
+    5) Gradle gives gradlew (gradle wrapper) to work without installing it.
+    6) Gradle allows us to use multiple repositories like google, maven, ivy, local file system to get plugins/jars and etc.
+    7) Gradle having Caching Feature
+    8) Developing multi-module projects with gradle becomes easy
+    9) Allows to convert the maven project into gradle project
+    10) Gradle gives standard directory structure to develop different types of application
+    11) While working with gradle, you do not need to write scripts in xml. It allows to write scripts in DSL(Domain Specific Language - Groovy/Kotlin).
+
+--------------------------------------------------------------------------------------------------------------------------
+
+    build.gradle :-
+
+    Plugins
+        |----> tasks
+                 |----> actions
+
+--------------------------------------------------------------------------------------------------------------------------
+
+task myFirstTask{
+    println("This is my First Tasks")
+}
+
+task mySecondTask
+mySecondTask {
+    println("This is my Second Task")
+}
+
+1) gradle myFirstTask    :-    This is my First Task
+                               This is my Second Task
+1) gradle mySecondTask   :-    This is my First Task
+                               This is my Second Task
+
+--------------------------------------------------------------------------------------------------------------------------
+
+
+task myFirstTask{
+    println("This is my First Tasks")
+}
+
+task mySecondTask
+mySecondTask {
+    println("This is my Second Task")
+}
+
+task myThirdTask{
+    doLast{
+        println("This is Last Option")
+    }
+    doFirst {
+        println("This is First Option")
+    }
+}
+
+
+Input  :-      gradle myThirdTask
+Output :-      > Configure project :
+               This is my First Tasks
+               This is my Second Task
+
+               > Task :myThirdTask
+               This is First Option
+               This is Last Option

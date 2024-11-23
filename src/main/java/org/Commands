@@ -1,0 +1,13 @@
+--------------------------------------------------------------------------------------------------------------------------
+
+1)   // Single-Line Comment
+2)   /* Multi-Line Comment */
+
+--------------------------------------------------------------------------------------------------------------------------
+
+1) Check Gradle Version            :-   gradle --version
+2) Show all Tasks                  :-   gradle task --all
+3) Detail about a Task             :-   gradle help --task <task>
+4) List of Command-Line Option     :-   gradle --help
+
+1) Run a task                      :-   gradle <task>
